@@ -1,0 +1,28 @@
+<div [formGroup]="Form">
+<div [ngSwitch]="InputValue.controlType">
+    <div *ngSwitchCase="'text'">
+        <label for="{{InputValue.key}}"  class="form-label" ></label>
+        <input class="form-control" [type]="InputValue.type" [name]="InputValue.key" [id]="InputValue.key" formControlName="{{InputValue.key}}">
+    </div>
+    <div *ngSwitchCase="'email'">
+        <label for="{{InputValue.key}}"  class="form-label"></label>
+        <input class="form-control" [type]="InputValue.type" [name]="InputValue.key" [id]="InputValue.key" formControlName="{{InputValue.key}}">
+    </div>
+    <div *ngSwitchCase="'radio'">
+        <label for="{{InputValue.key}}"  class="form-label">{{InputValue.key}}</label>
+        <br>
+        <ng-container class="form-check" *ngFor="let item of InputValue.options">
+            <label for="{{item.key}}" class="form-check-label">
+                {{item.value}}
+                <input class="form-check-input" type="radio" [name]="InputValue.key" [id]="item.value" value="{{item.value}}"  formControlName="{{InputValue.key}}">
+            </label>
+        </ng-container>
+    </div>
+    <div *ngSwitchCase="'select'">
+        <label for="{{InputValue.key}}"  class="form-label">{{InputValue.key}}</label>
+        <select class="form-select" formControlName="{{InputValue.key}}">
+            <option *ngFor="let item of InputValue.options" [value]="item.value">{{item.key}}</option>
+        </select>
+    </div>
+</div>
+</div>

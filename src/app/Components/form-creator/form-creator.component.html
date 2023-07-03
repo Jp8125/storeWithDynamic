@@ -1,0 +1,10 @@
+<div class="container">
+    <ng-container *ngFor="let item of Controls">
+<form >
+    <app-input-creator [Form]="User" [InputValue]="item"></app-input-creator>
+</form>
+</ng-container>
+<div><button (click)="Add()">Addvalue</button></div>
+<div><button (click)="edit()">edit</button></div>
+</div>
+{{User.value|json}}
