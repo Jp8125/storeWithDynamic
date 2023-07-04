@@ -29,4 +29,8 @@ export class UserEffect {
 
         )
     )
+    editEffect=createEffect(()=>
+    this.Action.pipe(
+        ofType(addTrigger)
+    ))
 }
