@@ -8,15 +8,18 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav me-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/add" aria-current="page">Add <span class="visually-hidden">(current)</span></a>
+          <a class="nav-link active" routerLink="/chat" aria-current="page">Chat <span class="visually-hidden">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list">list</a>
-        </li>
-      
       </ul>
-     
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link "><button type="button" class="btn btn-outline-primary" (click)="out()">logout</button>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 <router-outlet></router-outlet>
+<!-- <app-payment></app-payment> -->
+<!-- <app-chat></app-chat> -->

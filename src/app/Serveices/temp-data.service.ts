@@ -15,4 +15,12 @@ export class TempDataService {
   postUser(user:UserModelTs){
     return this.http.post<UserModelTs>(this.url, user)
   }
+  createOrder(amount: number, currency: string, receipt: string) {
+    const paymentData = {
+      amount: amount,
+      currency: currency,
+      receipt: receipt
+    };
+    return this.http.post<{orderId: string}>('https://localhost:7206/api/payment/create-order', paymentData);
+  }
 }
